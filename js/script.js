@@ -6,7 +6,7 @@ let allData=[];
 
 // $.getJSON('파일경로', 할일);
 $.getJSON('./data/content.json', function(data){
-
+    initGallery(data);
 });
 function initGallery(data){
     $allData=data;
