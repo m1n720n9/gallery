@@ -19,14 +19,14 @@ function initGallery(data){
 }
 function addItem(){
     let elements=[];
-    let slicedData;
-    slicedData=$allData.slice($added, $added += $addItemCount);
-    $.each(slicedData, function(idx, item){
+    let slicedDate;
+    slicedDate=$allData.slice($added, $added += $addItemCount);
+    $.each(slicedDate, function(idx, item){
         let itemHTML=
-        '<li class="gallery-item">' +
-            '<a href="'+item.imges.large+'">' +
+        '<li class="gallery-item">' + 
+            '<a href="'+item.images.large+'">' +
                 '<figure>' +
-                    '<img src="'+item.images.thumb+'" alt="'+item.title+'">' +
+                    '<img src="'+item.images.thumb+'" alt="'+item.title+'">'+
                     '<figcaption>'+item.title+'</figcaption>'+
                 '</figure>'+
             '</a>'+
