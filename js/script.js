@@ -10,7 +10,30 @@ $.getJSON('./data/content.json', function(data){
 });
 function initGallery(data){
     $allData=data;
-    console.log($allData);
+    // console.log($allData);
+    addItem();
+    $loadMoreBtn.click(function(){
+        addItem();
+    });
+
+}
+function addItem(){
+    let elements=[];
+    let slicedData;
+    slicedData=$allData.slice($added, $added += $addItemCount);
+    $.each(slicedData, function(idx, item){
+        let itemHTML=
+        '<li class="gallery-item">' +
+            '<a href="'+item.imges.large+'">' +
+                '<figure>' +
+                    '<img src="'+item.images.thumb+'" alt="'+item.title+'">' +
+                    '<figcaption>'+item.title+'</figcaption>'+
+                '</figure>'+
+            '</a>'+
+        '</li>';
+        elements.push($(itemHTML).get(0))
+    })
+    $container.append(elements);
 }
 
 
